@@ -76,7 +76,7 @@ def pubsub_handler():
 
     # If the action is UpdateResource or CreateResource, send directly to invalid-messages
     if action in ["UpdateResource", "CreateResource"]:
-        logging.error(f"Unhandled action {action} - Sent to invalid-messages topic")
+        logging.error(f"Unhandled {action} - Sent to invalid-messages topic")
         publish_invalid_message(message_json)
         return ("OK", 200)
 
